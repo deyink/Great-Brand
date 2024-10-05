@@ -68,7 +68,7 @@ Basic authentication is required for sensitive endpoints. it is implemeneted for
 ## API Documentation
 1. **POST /api/events/initialize**
 - Initializes a new event with a specified number of tickets.
-Request Body:
+Request Body sample:
 {
   "eventName": "conference",
   "totalTickets": 100
@@ -78,7 +78,7 @@ Request Body:
 
 2. **POST /api/events/book**
 - Books a ticket for a user. If tickets are sold out, the user is added to a waiting list.
-Request Body:
+Request Body sample:
 {
   "userId": 1,
   "eventId": 10
@@ -89,7 +89,7 @@ Responses:
 
 3. **POST /api/events/cancel**
 -Cancels a booking for a user. If there's a waiting list, the next user is automatically assigned the ticket.
-Request Body:
+Request Body sample:
 {
   "userId": 1,
   "eventId": 10
@@ -99,6 +99,11 @@ Response:
 
 4. **GET /api/events/status/**
 - Retrieves the current status of an event including available tickets and the count of users in the waiting list.
+this route is authenticated:
+username: admin
+password: greatbrands
+
+response sample
 {
   "eventId": 10,
   "eventName": "conference",
